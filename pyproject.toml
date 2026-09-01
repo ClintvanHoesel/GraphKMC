@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "graphkmc"
+version = "0.1.0"
+description = "Kinetic Monte Carlo simulations on graphs and molecular lattices"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE.md"}
+dependencies = [
+    "numpy>=1.23",
+    "scipy>=1.9",
+    "numba>=0.57",
+    "tqdm>=4.60",
+    "matplotlib>=3.5",
+    "h5py>=3.7",
+]
+
+[project.optional-dependencies]
+hdf5 = ["hdfdict>=0.3"]
+
+[project.scripts]
+graphkmc-steady-state = "graphkmc.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["graphkmc*"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.isort]
+profile = "black"
+known_first_party = ["graphkmc"]

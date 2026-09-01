@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+data/
+particletracker.txt
+*.dbm
+*.dbm.*
+*.h5py
+
+tests/
